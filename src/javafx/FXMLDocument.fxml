@@ -1,38 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="774.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="969.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
    <children>
-      <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="764.0">
+      <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="960.0">
          <children>
-            <HBox prefHeight="45.0" prefWidth="757.0">
+            <FlowPane hgap="30.0">
                <children>
-                  <Label text="Título" />
-                  <TextField fx:id="titleField" prefHeight="26.0" prefWidth="97.0" />
-                  <Label layoutX="10.0" layoutY="10.0" text="Autor" />
-                  <TextField fx:id="authorField" layoutX="33.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="131.0" layoutY="10.0" text="Ano de Publicação" />
-                  <TextField fx:id="publishmentYearField" layoutX="168.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="270.0" layoutY="10.0" text="Publicadora" />
-                  <TextField fx:id="publisherField" layoutX="307.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="460.0" layoutY="10.0" text="Quantidade" />
-                  <TextField fx:id="quantityField" layoutX="473.0" layoutY="10.0" prefHeight="26.0" prefWidth="68.0" />
+                  <Group>
+                     <children>
+                        <Label layoutY="4.0" text="Título" />
+                        <TextField fx:id="titleField" layoutX="34.0" prefHeight="26.0" prefWidth="97.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutY="3.9999998211860657" text="Autor" />
+                        <TextField fx:id="authorField" layoutX="32.66667175292969" prefHeight="26.0" prefWidth="102.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutY="3.9999998211860657" text="Ano de Publicação" />
+                        <TextField fx:id="publishmentYearField" layoutX="110.66668701171875" prefHeight="26.0" prefWidth="102.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutY="3.9999998211860657" text="Publicadora" />
+                        <TextField fx:id="publisherField" layoutX="71.33331298828125" prefHeight="26.0" prefWidth="102.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutY="3.9999998211860657" text="Quantidade" />
+                        <TextField fx:id="quantityField" layoutX="68.66668701171875" prefHeight="26.0" prefWidth="68.0" />
+                     </children>
+                  </Group>
                </children>
-            </HBox>
-            <HBox prefHeight="31.0" prefWidth="681.0">
+            </FlowPane>
+            <HBox prefHeight="32.0" prefWidth="797.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#adicionarLivro" prefHeight="26.0" prefWidth="116.0" text="Adicionar" />
-                  <Button mnemonicParsing="false" onAction="#editarLivro" prefHeight="26.0" prefWidth="106.0" text="Editar" />
-                  <Button mnemonicParsing="false" onAction="#removerLivro" prefHeight="26.0" prefWidth="126.0" text="Remover" />
+                  <Button mnemonicParsing="false" onAction="#adicionarLivro" prefHeight="33.0" prefWidth="116.0" text="Adicionar" />
+                  <ProgressIndicator fx:id="progressIndicator" progress="0.0" />
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
             </HBox>
             <TableView fx:id="tableView" prefHeight="321.0" prefWidth="729.0">
                <columns>

@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.ParseException;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 import org.json.JSONArray;
@@ -30,7 +31,6 @@ public class FXMLDocumentController {
     private TableColumn<Livro, String> publisherColumn;
     @FXML
     private TableColumn<Livro, Long> quantityColumn;
-
     @FXML
     private TextField titleField;
     @FXML
@@ -41,6 +41,8 @@ public class FXMLDocumentController {
     private TextField publisherField;
     @FXML
     private TextField quantityField;
+    @FXML
+    private ProgressIndicator progressIndicator;
 
     private ObservableList<Livro> livros;
     
@@ -58,9 +60,25 @@ public class FXMLDocumentController {
         quantityColumn.setCellValueFactory(cellData -> new SimpleLongProperty(cellData.getValue().getQuantity()).asObject());
         searchBooks();
     }
+    
+    private void validateLongValue(String value, String erro) throws ParseException {
+        try {
+            Long.parseLong(value);
+        } catch(Exception ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro de Validação");
+            alert.setHeaderText(null);
+            alert.setContentText(erro);
+            alert.showAndWait();
+            throw new ParseException(erro, 0);
+        }
+    }
 
     @FXML
-    private void adicionarLivro() {
+    private void adicionarLivro() throws ParseException {
+        validateLongValue(publishmentYearField.getText(), "Campo Ano de Publicação deve ser um valor inteiro");
+        validateLongValue(quantityField.getText(), "Campo Quantidade deve ser um valor inteiro");
+        
         String title = titleField.getText();
         String author = authorField.getText();
         Long publishmentYear = Long.parseLong(publishmentYearField.getText());
@@ -110,14 +128,17 @@ public class FXMLDocumentController {
             .uri(URI.create(url))
             .GET()
             .build();
-
+        progressIndicator.setOpacity(1);
+        progressIndicator.setProgress(0.5);
         httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
             .thenApply(HttpResponse::statusCode)
             .thenAccept(statusCode -> {
+                progressIndicator.setProgress(0.7);
                 if (statusCode == 200) {
                     httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                         .thenApply(HttpResponse::body)
                         .thenAccept(responseBody -> {
+                            progressIndicator.setProgress(0.8);
                             parseBooks(responseBody);
                         })
                         .exceptionally(e -> {
@@ -138,7 +159,7 @@ public class FXMLDocumentController {
         try {
             JSONArray booksArray = new JSONArray(jsonResponse);
             livros.clear();
-
+            progressIndicator.setProgress(0.9);
             for (int i = 0; i < booksArray.length(); i++) {
                 JSONObject bookJson = booksArray.getJSONObject(i);
 
@@ -151,6 +172,9 @@ public class FXMLDocumentController {
                 Livro livro = new Livro(title, author, publishmentYear, publisher, quantity);
                 livros.add(livro);
             }
+            progressIndicator.setProgress(1);
+            progressIndicator.setOpacity(0);
+            progressIndicator.setProgress(0);
 
         } catch (Exception e) {
             System.err.println("Erro ao parsear a resposta JSON: " + e.getMessage());
