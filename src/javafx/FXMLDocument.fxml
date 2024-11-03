@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="740.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="774.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
    <children>
-      <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="729.0">
+      <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="764.0">
          <children>
             <HBox prefHeight="45.0" prefWidth="757.0">
                <children>
-                  <Label text="Title" />
+                  <Label text="Título" />
                   <TextField fx:id="titleField" prefHeight="26.0" prefWidth="97.0" />
-                  <Label layoutX="10.0" layoutY="10.0" text="Author" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Autor" />
                   <TextField fx:id="authorField" layoutX="33.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="131.0" layoutY="10.0" text="Publishment Year" />
+                  <Label layoutX="131.0" layoutY="10.0" text="Ano de Publicação" />
                   <TextField fx:id="publishmentYearField" layoutX="168.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="270.0" layoutY="10.0" text="Publisher" />
+                  <Label layoutX="270.0" layoutY="10.0" text="Publicadora" />
                   <TextField fx:id="publisherField" layoutX="307.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-                  <Label layoutX="460.0" layoutY="10.0" text="Quantity" />
+                  <Label layoutX="460.0" layoutY="10.0" text="Quantidade" />
                   <TextField fx:id="quantityField" layoutX="473.0" layoutY="10.0" prefHeight="26.0" prefWidth="68.0" />
                </children>
             </HBox>
@@ -36,11 +36,11 @@
             </HBox>
             <TableView fx:id="tableView" prefHeight="321.0" prefWidth="729.0">
                <columns>
-                  <TableColumn fx:id="titleColumn" prefWidth="136.0" text="Title" />
-                  <TableColumn fx:id="authorColumn" prefWidth="136.0" text="Author" />
-                  <TableColumn fx:id="publishmentYearColumn" prefWidth="120.0" text="Publishment Year" />
-                  <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Publisher" />
-                  <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="89.0" text="Quantity" />
+                  <TableColumn fx:id="titleColumn" prefWidth="136.0" text="Título" />
+                  <TableColumn fx:id="authorColumn" prefWidth="136.0" text="Autor" />
+                  <TableColumn fx:id="publishmentYearColumn" prefWidth="120.0" text="Ano de Publicação" />
+                  <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Publicadora" />
+                  <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="89.0" text="Quantidade" />
                </columns>
             </TableView>
          </children>
