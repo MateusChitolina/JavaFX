@@ -5,41 +5,45 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
    <children>
-      <TableView prefHeight="167.0" prefWidth="600.0">
-        <columns>
-          <TableColumn fx:id="titleColumn" prefWidth="136.0" text="Title" />
-          <TableColumn fx:id="authorColumn" prefWidth="136.0" text="Author" />
-            <TableColumn fx:id="publishmentYearColumn" prefWidth="120.0" text="Publishment Year" />
-            <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Publisher" />
-            <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="89.0" text="Quantity" />
-        </columns>
-      </TableView>
-      <HBox prefHeight="115.0" prefWidth="600.0">
+      <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label text="Title" />
-            <TextField fx:id="titleField" prefHeight="26.0" prefWidth="97.0" />
-            <Label layoutX="10.0" layoutY="10.0" text="Author" />
-            <TextField fx:id="authorField" layoutX="33.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-            <Label layoutX="131.0" layoutY="10.0" text="Publishment Year" />
-            <TextField fx:id="publishmentYearField" layoutX="168.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-            <Label layoutX="270.0" layoutY="10.0" text="Publisher" />
-            <TextField fx:id="publisherField" layoutX="307.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
-            <Label layoutX="460.0" layoutY="10.0" text="Quantity" />
-            <TextField fx:id="quantityField" layoutX="473.0" layoutY="10.0" prefHeight="26.0" prefWidth="68.0" />
+            <TableView fx:id="tableView" prefHeight="167.0" prefWidth="600.0">
+               <columns>
+                  <TableColumn fx:id="titleColumn" prefWidth="136.0" text="Title" />
+                  <TableColumn fx:id="authorColumn" prefWidth="136.0" text="Author" />
+                  <TableColumn fx:id="publishmentYearColumn" prefWidth="120.0" text="Publishment Year" />
+                  <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Publisher" />
+                  <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="89.0" text="Quantity" />
+               </columns>
+            </TableView>
+            <HBox prefHeight="115.0" prefWidth="600.0">
+               <children>
+                  <Label text="Title" />
+                  <TextField fx:id="titleField" prefHeight="26.0" prefWidth="97.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Author" />
+                  <TextField fx:id="authorField" layoutX="33.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
+                  <Label layoutX="131.0" layoutY="10.0" text="Publishment Year" />
+                  <TextField fx:id="publishmentYearField" layoutX="168.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
+                  <Label layoutX="270.0" layoutY="10.0" text="Publisher" />
+                  <TextField fx:id="publisherField" layoutX="307.0" layoutY="10.0" prefHeight="26.0" prefWidth="102.0" />
+                  <Label layoutX="460.0" layoutY="10.0" text="Quantity" />
+                  <TextField fx:id="quantityField" layoutX="473.0" layoutY="10.0" prefHeight="26.0" prefWidth="68.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#adicionarLivro" prefHeight="26.0" prefWidth="116.0" text="Adicionar" />
+                  <Button mnemonicParsing="false" onAction="#editarLivro" prefHeight="26.0" prefWidth="106.0" text="Editar" />
+                  <Button mnemonicParsing="false" onAction="#removerLivro" prefHeight="26.0" prefWidth="126.0" text="Remover" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#adicionarLivro" prefHeight="26.0" prefWidth="116.0" text="Adicionar" />
-            <Button mnemonicParsing="false" onAction="#editarLivro" prefHeight="26.0" prefWidth="106.0" text="Editar" />
-            <Button mnemonicParsing="false" onAction="#removerLivro" prefHeight="26.0" prefWidth="126.0" text="Remover" />
-         </children>
-      </HBox>
+      </VBox>
    </children>
-</VBox>
+</AnchorPane>
