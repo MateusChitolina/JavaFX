@@ -3,11 +3,11 @@ package javafx;
 public class Livro {
     private String title;
     private String author;
-    private int publishmentYear;
+    private Long publishmentYear;
     private String publisher;
-    private int quantity;
+    private Long quantity;
 
-    public Livro(String title, String author, int publishmentYear, String publisher, int quantity) {
+    public Livro(String title, String author, Long publishmentYear, String publisher, Long quantity) {
         this.title = title;
         this.author = author;
         this.publishmentYear = publishmentYear;
@@ -31,11 +31,11 @@ public class Livro {
         this.author = author;
     }
 
-    public int getPublishmentYear() {
+    public Long getPublishmentYear() {
         return publishmentYear;
     }
 
-    public void setPublishmentYear(int publishmentYear) {
+    public void setPublishmentYear(Long publishmentYear) {
         this.publishmentYear = publishmentYear;
     }
 
@@ -47,11 +47,11 @@ public class Livro {
         this.publisher = publisher;
     }
 
-    public int getQuantity() {
+    public Long getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
 }
