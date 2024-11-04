@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="969.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="969.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="javafx.FXMLDocumentController">
    <children>
       <VBox layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="960.0">
          <children>
@@ -39,7 +39,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Label layoutY="3.9999998211860657" text="Publicadora" />
+                        <Label layoutY="3.9999998211860657" text="Editora" />
                         <TextField fx:id="publisherField" layoutX="71.33331298828125" prefHeight="26.0" prefWidth="102.0" />
                      </children>
                   </Group>
@@ -68,7 +68,7 @@
                   <TableColumn fx:id="titleColumn" prefWidth="136.0" text="Título" />
                   <TableColumn fx:id="authorColumn" prefWidth="136.0" text="Autor" />
                   <TableColumn fx:id="publishmentYearColumn" prefWidth="120.0" text="Ano de Publicação" />
-                  <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Publicadora" />
+                  <TableColumn fx:id="publisherColumn" prefWidth="119.0" text="Editora" />
                   <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="89.0" text="Quantidade" />
                </columns>
             </TableView>
