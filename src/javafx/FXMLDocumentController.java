@@ -92,28 +92,6 @@ public class FXMLDocumentController {
         limparCampos();
     }
 
-    @FXML
-    private void editarLivro() {
-        Livro livroSelecionado = tableView.getSelectionModel().getSelectedItem();
-        if (livroSelecionado != null) {
-            livroSelecionado.setTitle(titleField.getText());
-            livroSelecionado.setAuthor(authorField.getText());
-            livroSelecionado.setPublishmentYear(Long.parseLong(publishmentYearField.getText()));
-            livroSelecionado.setPublisher(publisherField.getText());
-            livroSelecionado.setQuantity(Long.parseLong(quantityField.getText()));
-            tableView.refresh();
-            limparCampos();
-        }
-    }
-
-    @FXML
-    private void removerLivro() {
-        Livro livroSelecionado = tableView.getSelectionModel().getSelectedItem();
-        if (livroSelecionado != null) {
-            livros.remove(livroSelecionado);
-        }
-    }
-
     private void limparCampos() {
         titleField.clear();
         authorField.clear();
